@@ -1,0 +1,11 @@
+name: WelcomeMsg
+version: '${project.version}'
+main: net.capbear.welcomemsg.welcomemsg.WelcomeMsg
+api-version: 1.19
+authors: [ CaptainBear ]
+description: Sends a configurable dynamic title and welcome message to joining players
+commands:
+  welcomemsg:
+    description: Commands for welcomemsg
+    usage: /welcomemsg
+    permission: welcomemsg.command
