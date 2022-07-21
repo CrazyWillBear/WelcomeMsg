@@ -4,11 +4,7 @@ import org.bukkit.Bukkit;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
-
-import java.util.ArrayList;
 
 public class CommandWelcomeMsg implements CommandExecutor {
     final Plugin plugin = Bukkit.getServer().getPluginManager().getPlugin("WelcomeMsg");

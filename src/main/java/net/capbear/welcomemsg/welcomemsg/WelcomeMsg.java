@@ -19,10 +19,8 @@ public final class WelcomeMsg extends JavaPlugin implements Listener {
         // Plugin startup logic
         FileConfiguration config = this.getConfig(); // create config var
 
-        String[] defaultMsgs = { "Welcome to the server!", "Enjoy your stay!" }; // create default list of messages
-        ArrayList<String> msgs = new ArrayList<String>(Arrays.asList(defaultMsgs)); // convert to list
-        config.addDefault("messages", msgs); // define default messagelist
-        config.addDefault("title", msgs); // define default title
+        String[] defaultMsgs = { "Welcome to the server!", "Enjoy your stay!" }; // default message
+        config.addDefault("messages", defaultMsgs); // define default messagelist
 
         config.options().setHeader(Collections.singletonList("Use '§' not '&' when defining colors and whatnot"));
 
@@ -39,10 +37,6 @@ public final class WelcomeMsg extends JavaPlugin implements Listener {
     public void onPlayerJoin(PlayerJoinEvent event) {
         Player p = event.getPlayer();
         FileConfiguration config = this.getConfig(); // create config var
-
-        // show a random title
-        ArrayList<String> titles = (ArrayList<String>) config.getStringList("title");
-        Bukkit.getServer().dispatchCommand(Bukkit.getConsoleSender(), "title " + p.getName() + " title \"" + titles.get((int) (Math.random() * titles.size())) + "\"");
 
         // send a random message
         ArrayList<String> msgs = (ArrayList<String>) config.getStringList("messages");
