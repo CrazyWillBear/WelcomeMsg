@@ -1,7 +1,6 @@
 package net.capbear.welcomemsg.welcomemsg;
 
 import java.util.ArrayList;
-import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -9,7 +8,6 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Arrays;
 import java.util.Collections;
 
 public final class WelcomeMsg extends JavaPlugin implements Listener {
@@ -41,6 +39,8 @@ public final class WelcomeMsg extends JavaPlugin implements Listener {
         // send a random message
         ArrayList<String> msgs = (ArrayList<String>) config.getStringList("messages");
         p.sendMessage(msgs.get((int) (Math.random() * msgs.size())));
+
+        p.clearTitle();
     }
 
     @Override
